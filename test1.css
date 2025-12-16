@@ -1,7 +1,7 @@
 /**
- * @name Blur (Без вмешательства в фон)
- * @version 1.0.1
- * @description Только стили интерфейса, фон не трогает
+ * @name Blur (Только прозрачные панели, фон не трогает)
+ * @version 1.0.2
+ * @description Полупрозрачные панели, фон остаётся как есть
  */
 
 @import url("https://raw.githubusercontent.com/Anonwh/test1/main/test.css");
@@ -11,7 +11,6 @@
 /* ========================================================================= */
 :root{
     --blur-other: 30px;
-
     --color-main: rgba(255,255,255,0.1);
     --border-main:  1px solid rgba(255, 255, 255, 0.1);
     --boxshadow: inset 0 0 10px rgba(100, 100, 100, 0.1);
@@ -21,9 +20,9 @@
 /* 2. Очищаем вмешательства в фон */
 /* ========================================================================= */
 html, body {
-    background: none !important; /* Не трогаем твой фон */
-    filter: none !important;     
-    animation: none !important;  
+    background: none !important; /* НЕ трогаем фон пользователя */
+    filter: none !important;
+    animation: none !important;
     height: 100%;
     margin: 0;
     padding: 0;
@@ -43,13 +42,35 @@ html::after,
 }
 
 /* ========================================================================= */
-/* 4. Дополнительные стили для читаемости Discord интерфейса */
+/* 4. Панели и интерфейс - прозрачные с полупрозрачной подложкой */
 /* ========================================================================= */
 .theme-dark .bg-1QIAay,
 .theme-dark .container-ZMc96U,
 .theme-dark .form-3gdPxP,
-.theme-dark .sidebar-2K8pFh {
-    background-color: rgba(0, 0, 0, 0.5) !important; /* Полупрозрачный фон для панелей */
+.theme-dark .sidebar-2K8pFh,
+.visual-refresh .wrapper_f7ecac,
+.visual-refresh .panels_c48ade,
+.visual-refresh .messageGroupWrapper__45690 {
+    background-color: rgba(0, 0, 0, 0.2) !important; /* лёгкая прозрачность */
     border: var(--border-main);
     box-shadow: var(--boxshadow);
+    backdrop-filter: none !important; /* убираем блюр */
+}
+
+/* ========================================================================= */
+/* 5. Остальные элементы Discord - прозрачные */
+/* ========================================================================= */
+.callContainer_cb9592,
+.gradientContainer_bfe55a,
+.buttonSection__1405b,
+.disconnect_f1ceac,
+.quickSelectPopout_ebaca5,
+.root__49fc1,
+.hoverButtonGroup__06ab4,
+.footer__49fc1,
+.overlay_c0bea0 {
+    background: rgba(0, 0, 0, 0.2) !important;
+    border: var(--border-main);
+    box-shadow: var(--boxshadow);
+    backdrop-filter: none !important;
 }
