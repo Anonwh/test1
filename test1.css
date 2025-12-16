@@ -1,8 +1,7 @@
 /**
  * @name Blur (Без вмешательства в фон)
- * @version 1.0.0
- * @author Solta & jAba65
- * @description Blur theme без изменения твоего фона
+ * @version 1.0.1
+ * @description Только стили интерфейса, фон не трогает
  */
 
 @import url("https://raw.githubusercontent.com/Anonwh/test1/main/test.css");
@@ -23,15 +22,28 @@
 /* ========================================================================= */
 html, body {
     background: none !important; /* Не трогаем твой фон */
-    filter: none !important;     /* Убираем любые фильтры */
-    animation: none !important;  /* Без анимаций */
+    filter: none !important;     
+    animation: none !important;  
     height: 100%;
     margin: 0;
     padding: 0;
 }
 
 /* ========================================================================= */
-/* 3. Дополнительные стили для читаемости Discord интерфейса */
+/* 3. Убираем любые псевдоэлементы с блюром */
+/* ========================================================================= */
+html::before,
+html::after,
+.bg__960e4 {
+    content: none !important;
+    display: none !important;
+    background: none !important;
+    filter: none !important;
+    animation: none !important;
+}
+
+/* ========================================================================= */
+/* 4. Дополнительные стили для читаемости Discord интерфейса */
 /* ========================================================================= */
 .theme-dark .bg-1QIAay,
 .theme-dark .container-ZMc96U,
