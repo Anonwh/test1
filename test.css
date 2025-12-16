@@ -5,7 +5,7 @@
     --app-bg: url(https://so1ta.github.io/Images/kurumi-4K.png);
     --blur-bg: 1px;
     --blur-other: 1px;
-    --brightness-bg: 0.8;
+    --brightness-bg: 1;
 
     --color-main: rgba(255,255,255,0.1);
     --border-main:  1px solid rgba(255, 255, 255, 0.1);
@@ -199,40 +199,6 @@ body{
     display: none !important;
 }
 
-/* =============================== */
-/* ЗАТЕМНЕНИЕ ФОНА (МАГАЗИН + ЗАДАНИЯ) */
-/* =============================== */
-
-/* Магазин */
-.bg__960e4.theme-dark.theme-darker.images-dark::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.55); /* ← СИЛА ЗАТЕМНЕНИЯ */
-    z-index: 0;
-    pointer-events: none;
-}
-
-/* Задания / квесты */
-.postEnrollmentBackground__24e2c::before,
-.postEnrollmentBackgroundCollapsed__24e2c::before,
-.postEnrollmentBackgroundExpanded__24e2c::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.55); /* ← СИЛА ЗАТЕМНЕНИЯ */
-    z-index: 0;
-    pointer-events: none;
-}
-
-/* Чтобы контент был поверх затемнения */
-.bg__960e4.theme-dark.theme-darker.images-dark > *,
-.postEnrollmentBackground__24e2c > *,
-.postEnrollmentBackgroundCollapsed__24e2c > *,
-.postEnrollmentBackgroundExpanded__24e2c > * {
-    position: relative;
-    z-index: 1;
-}
 
 
 /* Остальные блоки интерфейса (кнопки, чекбоксы, голосовые панели, прогресс-бары) остаются без изменений */
