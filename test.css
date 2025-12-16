@@ -198,6 +198,14 @@ body{
 .defaultColor__4bd52.headerText__1ba69 {
     display: none !important;
 }
+/* Белый индикатор говорящего в голосовом канале */
+.voiceChannelHighlightGlow_c69b6d,
+.voiceChannelHighlightGlow_c69b6d::before,
+.voiceChannelHighlightGlow_c69b6d::after {
+    background-color: rgba(255, 255, 255, 1) !important;
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.8) !important;
+    filter: none !important; /* убираем возможные hue-rotate */
+}
 
 
 
