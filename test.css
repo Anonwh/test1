@@ -181,4 +181,22 @@ body{
     background: transparent !important;
 }
 
+/* Фон блока "Задание выполнено" */
+.postEnrollmentBackground__24e2c {
+    background: transparent !important; /* Делает фон прозрачным */
+    background-image: none !important;  /* Убирает любой градиент */
+    opacity: 1 !important;              /* Сохраняем видимость текста/контента */
+}
+
+/* Если есть внутренние блоки с градиентами */
+.postEnrollmentBackground__24e2c * {
+    background: transparent !important;
+    background-image: none !important;
+    box-shadow: none !important;
+}
+/* Скрыть дату "Доступно до ..." */
+.defaultColor__4bd52.headerText__1ba69 {
+    display: none !important;
+}
+
 /* Остальные блоки интерфейса (кнопки, чекбоксы, голосовые панели, прогресс-бары) остаются без изменений */
