@@ -193,10 +193,6 @@ border: none;
     background-color: rgba(255, 255, 255, 0.24) !important;
 }
 
-/* Profile card */
-.accountProfileCard__1fed1{
-    border: var(--border-main);
-}
 
 
 /* ВЫДАЧА ДЕМКИ */
