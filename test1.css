@@ -1,68 +1,43 @@
 /**
- * @name Blur
+ * @name Blur (Без вмешательства в фон)
  * @version 1.0.0
  * @author Solta & jAba65
- * @authorId solta \ solta#8484
- * @description Blur theme
- * @source https:https://github.com/So1ta/So1ta.github.io/tree/main/discord-themes
-*/
+ * @description Blur theme без изменения твоего фона
+ */
 
 @import url("https://raw.githubusercontent.com/Anonwh/test1/main/test.css");
 
-
 /* ========================================================================= */
-/* 2. КОРНЕВЫЕ ПЕРЕМЕННЫЕ ТЕМЫ */
+/* 1. Корневые переменные темы */
 /* ========================================================================= */
 :root{
-    --blur-bg: 80px; /* Значение блюра для "туманностей" */
     --blur-other: 30px;
-    --brightness-bg: 0.5; /* Значение яркости для общего затемнения космического фона */
 
     --color-main: rgba(255,255,255,0.1);
     --border-main:  1px solid rgba(255, 255, 255, 0.1);
     --boxshadow: inset 0 0 10px rgba(100, 100, 100, 0.1);
-
-    /* Цвета для космических градиентов (основные цвета туманностей) */
-    --cosmic-dark: #050510; /* Очень темный фон для "глубины космоса" */
-    --cosmic-blue: #0A003D; /* Темно-синий/индиго */
-    --cosmic-purple: #3D003D; /* Темно-фиолетовый */
-    --cosmic-red: #3D0A00; /* Темно-красный/бордовый */
-    --cosmic-light-blue: #003D3D; /* Темный бирюзовый */
-    /* Цвета для ярких "звездных" вкраплений или пульсирующих участков */
-    --cosmic-bright-1: rgba(255, 0, 255, 0.2); /* Яркий, полупрозрачный фиолетовый */
-    --cosmic-bright-2: rgba(0, 255, 255, 0.2); /* Яркий, полупрозрачный голубой */
-}
-
-
-
-    /* Применяем все фильтры и все анимации к ЭТОМУ слою */
-    filter: blur(var(--blur-bg)) brightness(var(--brightness-bg)); /* Постоянный блюр и яркость */
-    animation: background-hue-transition 30s linear infinite, /* Переливание цвета */
-               cosmic-drift 60s linear infinite, /* Движение облаков */
-               cosmic-shimmer 8s ease-in-out infinite alternate; /* Плавное мигание/пульсация */
 }
 
 /* ========================================================================= */
-/* 4. ОЧИСТКА BODY (чтобы не мешало фону) */
+/* 2. Очищаем вмешательства в фон */
 /* ========================================================================= */
-body {
-    background: none !important; /* Убираем любой фон с body */
-    filter: none !important;     /* Убираем любые фильтры с body */
-    animation: none !important;  /* Убираем любые анимации с body */
-    height: 100%; /* Убедимся, что body занимает всю доступную высоту */
+html, body {
+    background: none !important; /* Не трогаем твой фон */
+    filter: none !important;     /* Убираем любые фильтры */
+    animation: none !important;  /* Без анимаций */
+    height: 100%;
     margin: 0;
     padding: 0;
 }
 
 /* ========================================================================= */
-/* 5. ДОПОЛНИТЕЛЬНЫЕ СТИЛИ ДЛЯ ЧИТАЕМОСТИ ИНТЕРФЕЙСА DISCORD */
+/* 3. Дополнительные стили для читаемости Discord интерфейса */
 /* ========================================================================= */
-/* Эти стили добавляют полупрозрачные фоны к элементам интерфейса Discord,
-   чтобы текст и иконки были лучше видны поверх анимированного космического фона. */
 .theme-dark .bg-1QIAay,
 .theme-dark .container-ZMc96U,
 .theme-dark .form-3gdPxP,
-.theme-dark .sidebar-2K8pFh
-{
-    background-color: rgba(0, 0, 0, 0.5) !important;
+.theme-dark .sidebar-2K8pFh {
+    background-color: rgba(0, 0, 0, 0.5) !important; /* Полупрозрачный фон для панелей */
+    border: var(--border-main);
+    box-shadow: var(--boxshadow);
 }
