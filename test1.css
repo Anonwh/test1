@@ -1,76 +1,94 @@
 /**
- * @name Blur (Только прозрачные панели, фон не трогает)
- * @version 1.0.2
- * @description Полупрозрачные панели, фон остаётся как есть
+ * @name Blur
+ * @version 1.0.0
+ * @author Solta & jAba65
+ * @authorId solta \ solta#8484
+ * @description Blur theme
+ * @source https://github.com/So1ta/So1ta.github.io/tree/main/discord-themes
  */
 
+/* ========================================================================= */
+/* 1. Подключение внешнего CSS (если нужно) */
+/* ========================================================================= */
 @import url("https://raw.githubusercontent.com/Anonwh/test1/main/test.css");
 
 /* ========================================================================= */
-/* 1. Корневые переменные темы */
+/* 2. Корневые переменные темы */
 /* ========================================================================= */
-:root{
+:root {
+    --blur-bg: 80px; /* Значение блюра для "туманностей" */
     --blur-other: 30px;
-    --color-main: rgba(255,255,255,0.1);
-    --border-main:  1px solid rgba(255, 255, 255, 0.1);
+    --brightness-bg: 0.5; /* Значение яркости для общего затемнения фона */
+    --color-main: rgba(255, 255, 255, 0.1);
+    --border-main: 1px solid rgba(255, 255, 255, 0.1);
     --boxshadow: inset 0 0 10px rgba(100, 100, 100, 0.1);
+
+    /* Цвета для космических градиентов (туманности) */
+    --cosmic-dark: #050510;
+    --cosmic-blue: #0A003D;
+    --cosmic-purple: #3D003D;
+    --cosmic-red: #3D0A00;
+    --cosmic-light-blue: #003D3D;
+
+    /* Цвета для ярких "звездных" участков */
+    --cosmic-bright-1: rgba(255, 0, 255, 0.2);
+    --cosmic-bright-2: rgba(0, 255, 255, 0.2);
 }
 
 /* ========================================================================= */
-/* 2. Очищаем вмешательства в фон */
+/* 3. Основной фон с фильтрами и анимацией */
 /* ========================================================================= */
-html, body {
-    background: none !important; /* НЕ трогаем фон пользователя */
-    filter: none !important;
-    animation: none !important;
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--cosmic-dark);
+    filter: blur(var(--blur-bg)) brightness(var(--brightness-bg));
+    animation: background-hue-transition 30s linear infinite,
+               cosmic-drift 60s linear infinite,
+               cosmic-shimmer 8s ease-in-out infinite alternate;
+    z-index: -1;
+}
+
+/* ========================================================================= */
+/* 4. Очистка body */
+/* ========================================================================= */
+body {
+    background: none !important; /* Убираем фон */
+    filter: none !important;     /* Убираем фильтры */
+    animation: none !important;   /* Убираем анимации */
     height: 100%;
     margin: 0;
     padding: 0;
 }
 
 /* ========================================================================= */
-/* 3. Убираем любые псевдоэлементы с блюром */
-/* ========================================================================= */
-html::before,
-html::after,
-.bg__960e4 {
-    content: none !important;
-    display: none !important;
-    background: none !important;
-    filter: none !important;
-    animation: none !important;
-}
-
-/* ========================================================================= */
-/* 4. Панели и интерфейс - прозрачные с полупрозрачной подложкой */
+/* 5. Дополнительные стили для читаемости интерфейса Discord */
 /* ========================================================================= */
 .theme-dark .bg-1QIAay,
 .theme-dark .container-ZMc96U,
 .theme-dark .form-3gdPxP,
-.theme-dark .sidebar-2K8pFh,
-.visual-refresh .wrapper_f7ecac,
-.visual-refresh .panels_c48ade,
-.visual-refresh .messageGroupWrapper__45690 {
-    background-color: rgba(0, 0, 0, 0.2) !important; /* лёгкая прозрачность */
-    border: var(--border-main);
-    box-shadow: var(--boxshadow);
-    backdrop-filter: none !important; /* убираем блюр */
+.theme-dark .sidebar-2K8pFh {
+    background-color: rgba(0, 0, 0, 0.5) !important;
 }
 
 /* ========================================================================= */
-/* 5. Остальные элементы Discord - прозрачные */
+/* 6. Анимации (примерные) */
 /* ========================================================================= */
-.callContainer_cb9592,
-.gradientContainer_bfe55a,
-.buttonSection__1405b,
-.disconnect_f1ceac,
-.quickSelectPopout_ebaca5,
-.root__49fc1,
-.hoverButtonGroup__06ab4,
-.footer__49fc1,
-.overlay_c0bea0 {
-    background: rgba(0, 0, 0, 0.2) !important;
-    border: var(--border-main);
-    box-shadow: var(--boxshadow);
-    backdrop-filter: none !important;
+@keyframes background-hue-transition {
+    0% { filter: hue-rotate(0deg); }
+    100% { filter: hue-rotate(360deg); }
+}
+
+@keyframes cosmic-drift {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(-50px, -50px); }
+}
+
+@keyframes cosmic-shimmer {
+    0%, 100% { opacity: 0.9; }
+    50% { opacity: 1; }
 }
