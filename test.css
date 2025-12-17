@@ -208,9 +208,7 @@ body{
     filter: none !important; /* убираем возможные hue-rotate */
 }
 
-.theme-dark ._2b1f52e43a8f1c02-textBadge._2b1f52e43a8f1c02-eyebrow {
-    background-color: rgb(165, 165, 165) !important;
-}
+
 
 
 /* Остальные блоки интерфейса (кнопки, чекбоксы, голосовые панели, прогресс-бары) остаются без изменений */
