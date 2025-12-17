@@ -51,6 +51,9 @@
   --update-notice-1: none;
   /*FrostedGlass*/
 }
+._2b1f52e43a8f1c02-textBadge {
+    background-color: rgb(165, 165, 165) !important;
+}
 
 /* ========================================================================= */
 /* 4. Очистка body */
