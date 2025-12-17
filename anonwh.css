@@ -1,0 +1,234 @@
+@import url(https://nfld99.github.io/Better-Discord/Source_Code/Addons/Use_Animations/Yes.css);
+@import url("https://raw.githubusercontent.com/Anonwh/test1/main/test.css");
+@import url("https://gibbu.github.io/BetterDiscord-Themes/addons/windows-titlebar.css");
+@import url('https://monstrousdev.github.io/themes/addons/user-tags.css');
+@import url("https://discordstyles.github.io/FrostedGlass/FrostedGlass.css");
+
+:root {
+  /* Background image variables */
+  --background-image: url('https://so1ta.github.io/Images/kurumi-4K.png'); 
+  --background-image-blur: 3px; 
+  --background-image-size: cover; 
+  --background-image-position: center; 
+
+  /* Popout & Modal variables */
+  --pop out-modal-image: var(--background-image); 
+  --popout-modal-blur: 5px; 
+  --popout-modal-size: cover; 
+  --popout-modal-position: center; 
+
+  /* Brightness variables */
+  --serverlist -brightness: 10000; 
+  --left-brightness: 0.55; 
+  --middle-brightness: 0; 
+  --right-brightness: 0; 
+  --popout-modal-brightness: 0.75; 
+
+  /* Home image variables */
+  --home-button-image: url('https://gibbu.github.io/BetterDiscord-Themes/FrostedGlass/assets/discord.svg'); 
+  --home-button-size: cover; 
+  --home-button-position: center; 
+
+  /* Gradient variables */
+  --gradient-primary: 165,165,165; 
+  --gradient-secondary: 165,165,165; 
+  --gradient-direction: 320deg; 
+
+  /* Tint variables */
+  --tint-colour: 128,59,173; 
+  --tint-brightness: 0; 
+
+  /* Other variables */
+  --window-padding: 0px;
+  --window-roundness: 0px;
+  --scrollbar-colour: rgba(255,255,255,0.05);
+  --link-colour: #6A5ACD; 
+
+  */
+  --font: 'Whitney';
+
+  /* Do not touch */
+  --update-notice-1: none;
+  /*FrostedGlass*/
+}
+
+/* ========================================================================= */
+/* 4. Очистка body */
+/* ========================================================================= */
+body {
+    background: none !important; /* Убираем фон */
+    filter: none !important;     /* Убираем фильтры */
+    animation: none !important;   /* Убираем анимации */
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* ========================================================================= */
+/* 5. Дополнительные стили для читаемости интерфейса Discord */
+/* ========================================================================= */
+.theme-dark .bg-1QIAay,
+.theme-dark .container-ZMc96U,
+.theme-dark .form-3gdPxP,
+.theme-dark .sidebar-2K8pFh {
+    background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+/* ========================================================================= */
+/* 6. Анимации (примерные) */
+/* ========================================================================= */
+@keyframes background-hue-transition {
+    0% { filter: hue-rotate(0deg); }
+    100% { filter: hue-rotate(360deg); }
+}
+
+@keyframes cosmic-drift {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(-50px, -50px); }
+}
+
+@keyframes cosmic-shimmer {
+    0%, 100% { opacity: 0.9; }
+    50% { opacity: 1; }
+
+}
+
+/* =============================== */
+/* ЗАТЕМНЕНИЕ ФОНА (МАГАЗИН + ЗАДАНИЯ) */
+/* =============================== */
+
+/* Основной контейнер с фоном */
+._5e434347c823b592-page, /* блок заданий */
+._shop-container {       /* пример класса блока магазина */
+    position: relative;   /* чтобы контент можно было ставить поверх затемнения */
+    z-index: 1;
+}
+
+/* Затемнение поверх фона */
+._5e434347c823b592-page::before,
+._shop-container::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.55); /* ровное полупрозрачное затемнение */
+    pointer-events: none;  /* чтобы не мешало кликам по кнопкам */
+    z-index: 0;
+}
+
+/* Контент поверх затемнения */
+._5e434347c823b592-page > *,
+._shop-container > * {
+    position: relative;
+    z-index: 1;
+}
+.c69b6db0641110f6-voiceChannelHighlightGlow {
+    background: rgb(165,165,165) !important;
+    opacity: 1 !important;
+    filter: none !important;
+    box-shadow: none !important;
+}
+
+
+
+
+
+/* Текст и иконка */
+.c69b6db0641110f6-containerDefault.c69b6db0641110f6-selected 
+._2ea32c412048f708-name,
+.c69b6db0641110f6-containerDefault.c69b6db0641110f6-selected 
+._2ea32c412048f708-icon {
+    color: #ffffff !important;
+    text-shadow: none !important;
+    position: relative;
+    z-index: 2;
+}
+
+/* Фон кружка — лёгкая прозрачная заливка */
+._146e2f3dfd5ca841-progressBar circle:first-child {
+    stroke: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Прогресс — серый, равномерный */
+._146e2f3dfd5ca841-progressBar circle:last-child,
+._146e2f3dfd5ca841-progress {
+    stroke: #A5A5A5 !important;
+    stroke-linecap: round !important;
+    transition: stroke-dashoffset 0.3s ease !important;
+}
+
+/* Прозрачный фон панели */
+._24e2c2ebe64fd7d3-postEnrollmentBackground,
+._24e2c2ebe64fd7d3-postEnrollmentBackgroundExpanded,
+._24e2c2ebe64fd7d3-postEnrollmentBackgroundCollapsed {
+    background: transparent !important;
+    backdrop-filter: blur(8px) !important;
+    border-radius: 12px !important;
+    opacity: 1 !important;
+}
+
+/* Скрыть дату */
+._4bd5201c86a2042b-defaultColor.cf48127484dbde85-text-xxs\/medium._1ba69b2cc2159849-flex._1ba69b2cc2159849-headerText {
+    display: none !important;
+}
+
+/* Выравнивание текста и элементов */
+._1ba69b2cc2159849-flex {
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 8px !important;
+}
+
+/* Голосовая связь — убираем лишний фон и выравниваем */
+.e131a99484292a19-voiceButtonsContainer {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Если внутри есть скрытые элементы — убедимся, что они не ломают вёрстку */
+.e131a99484292a19-voiceButtonsContainer span {
+    display: none !important;
+}
+
+/* Контейнер голосовой связи — убираем лишние отступы/фоны */
+._7c0bae9243151ddd-flex._7c0bae9243151ddd-horizontal.e131a99484292a19-connection {
+    background: transparent !important;
+    flex: 1 1 auto !important;
+}
+
+.c1e9c47c23f12ca3-menu {
+  position: relative; /* важно для корректного рендеринга блюра */
+  background-color: hsla(0, 0%, 100%, 0.065) !important; /* прозрачный фон для blur */
+  border-radius: calc(var(--popout-radius) * 1.7) !important; /* углы как было */
+  box-shadow: 
+    0 0 0 1px hsla(0, 0%, 100%, 0.03), 
+    0 3px 15px hsla(0, 0%, 0%, 0.12) !important; /* мягкая тень */
+  backdrop-filter: blur(16px) brightness(1.1) saturate(1.07) !important; /* рабочий blur */
+  -webkit-backdrop-filter: blur(16px) brightness(1.1) saturate(1.07) !important;
+  overflow: hidden;
+}
+
+/* Убираем :before, чтобы не мешал блюру */
+.c1e9c47c23f12ca3-menu:before {
+  display: none;
+}
+
+/* Основные контейнеры */
+._740174f3d6a2c8fe-floatingBars,
+._740174f3d6a2c8fe-stackedBars,
+._841c8f861f7b2704-container,
+._841c8f861f7b2704-replyBar,
+._841c8f861f7b2704-actions {
+    background-color: rgba(0, 0, 0, 0); /* слегка белый, почти прозрачный */
+    backdrop-filter: none; /* убираем размытие, если есть */
+}
+
+/* Сохраняем читаемость текста */
+._841c8f861f7b2704-text,
+._841c8f861f7b2704-mentionButton,
+._841c8f861f7b2704-replyLabel {
+    color: var(--text-default);
+}
+
