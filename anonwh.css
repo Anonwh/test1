@@ -11,7 +11,7 @@
 
 :root {
   /* Background image variables */
-  --background-image: url('https://so1ta.github.io/Images/kurumi-4K.png'); 
+  --background-image: url(https://so1ta.github.io/Images/kurumi-4K.png); 
   --background-image-blur: 3px; 
   --background-image-size: cover; 
   --background-image-position: center; 
