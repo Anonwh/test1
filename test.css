@@ -209,30 +209,5 @@ body{
 }
 
 
-/* ===================== */
-/* PROFILE GLASS EFFECT */
-/* ===================== */
-
-/* ВЕСЬ попап профиля */
-.root__24502,
-.fullSize_c0bea0 {
-    background: rgba(255, 255, 255, 0.02) !important;
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-    border-radius: 14px;
-}
-
-/* Внутренний контейнер профиля */
-.c0bea05627c5dc35-inner,
-.inner_c0bea0,
-.outer_c0bea0 {
-    background: rgba(255, 255, 255, 0.06) !important;
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-    border-radius: 12px;
-    box-shadow: inset 0 0 12px rgba(255,255,255,0.08);
-}
-
-
 
 /* Остальные блоки интерфейса (кнопки, чекбоксы, голосовые панели, прогресс-бары) остаются без изменений */
