@@ -6,7 +6,8 @@
 
 .theme-dark ._2b1f52e43a8f1c02-textBadge._2b1f52e43a8f1c02-eyebrow {
     background-color: rgb(165, 165, 165) !important;
-    
+
+    :root {
   /* Background image variables */
   --background-image: url('https://i.pinimg.com/1200x/51/58/7d/51587d8d4f6ef6ee3367ec29b9b0eea4.jpg'); 
   --background-image-blur: 3px; 
