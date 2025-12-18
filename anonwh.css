@@ -272,20 +272,34 @@ body {
   background-clip: padding-box !important; /* чтобы темы не перебивали */
 }
 
-/* Белый текст и шрифт только в сообщениях чата */
-div[class*="messageContent"] {
-    font-family: 'Roboto', sans-serif !important; /* Твой шрифт */
-    color: #ffffff !important; /* Чисто белый цвет текста */
-}
-
-/* Белый цвет ссылок внутри сообщений */
-div[class*="messageContent"] a {
+/* Обычные сообщения — белый текст */
+div[class*="messageContent"]:not(:has(.messagelogger-edit-marker)) {
+    font-family: 'Roboto', sans-serif !important;
     color: #ffffff !important;
 }
 
-/* Белый цвет эмодзи */
+/* Редактированные сообщения — тёмно-белый */
+div[class*="messageContent"]:has(.messagelogger-edit-marker) {
+    font-family: 'Roboto', sans-serif !important;
+    color: #eeeeee !important;
+}
+
+/* Цвет ссылок */
+div[class*="messageContent"]:not(:has(.messagelogger-edit-marker)) a {
+    color: #ffffff !important;
+}
+div[class*="messageContent"]:has(.messagelogger-edit-marker) a {
+    color: #eeeeee !important;
+}
+
+/* Эмодзи */
 div[class*="messageContent"] .emoji {
-    filter: brightness(1) !important; /* эмодзи не затемняются темой */
+    filter: brightness(1) !important;
+}
+
+/* Цвет самого маркера (изменено) */
+.messagelogger-edit-marker {
+    color: #bbbbbb !important; /* чуть темнее, чтобы выделялось */
 }
 
 
