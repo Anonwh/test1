@@ -6,11 +6,13 @@
 
 .theme-dark ._2b1f52e43a8f1c02-textBadge._2b1f52e43a8f1c02-eyebrow {
     background-color: rgb(165, 165, 165) !important;
-}
-
-
-:root { /* Background image variables */ --background-image: url("https://so1ta.github.io/Images/kurumi-4K.png"); --background-image-blur: 3px; --background-image-size: cover; --background-image-position: center;
-
+    
+  /* Background image variables */
+  --background-image: url('https://so1ta.github.io/Images/kurumi-4K.png'); 
+  --background-image-blur: 3px; 
+  --background-image-size: cover; 
+  --background-image-position: center;
+    
   /* Popout & Modal variables */
   --pop out-modal-image: var(--background-image); 
   --popout-modal-blur: 5px; 
