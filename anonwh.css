@@ -23,11 +23,11 @@
   --popout-modal-position: center; 
 
   /* Brightness variables */
-  --serverlist -brightness: 10000; 
+  --serverlist -brightness: 1000; 
   --left-brightness: 0.55; 
   --middle-brightness: 0; 
   --right-brightness: 0; 
-  --popout-modal-brightness: 0.75; 
+  --popout-modal-brightness: -0.1; 
 
   /* Home image variables */
   --home-button-image: url('https://gibbu.github.io/BetterDiscord-Themes/FrostedGlass/assets/discord.svg'); 
@@ -49,8 +49,9 @@
   --scrollbar-colour: rgba(255,255,255,0.05);
   --link-colour: #6A5ACD; 
 
+
   */
-  --font: 'Whitney';
+  --font: 'Roboto';
 
   /* Do not touch */
   --update-notice-1: none;
@@ -207,16 +208,17 @@ body {
 }
 
 .c1e9c47c23f12ca3-menu {
-  position: relative; /* важно для корректного рендеринга блюра */
-  background-color: hsla(0, 0%, 100%, 0.065) !important; /* прозрачный фон для blur */
-  border-radius: calc(var(--popout-radius) * 1.7) !important; /* углы как было */
+  position: relative !important;
+  background-color: hsla(0, 0%, 100%, 0.065) !important; 
+  border-radius: 5px !important; /* фиксированные скругления */
   box-shadow: 
     0 0 0 1px hsla(0, 0%, 100%, 0.03), 
-    0 3px 15px hsla(0, 0%, 0%, 0.12) !important; /* мягкая тень */
-  backdrop-filter: blur(16px) brightness(1.1) saturate(1.07) !important; /* рабочий blur */
+    0 3px 15px hsla(0, 0%, 0%, 0.12) !important; 
+  backdrop-filter: blur(16px) brightness(1.1) saturate(1.07) !important; 
   -webkit-backdrop-filter: blur(16px) brightness(1.1) saturate(1.07) !important;
   overflow: hidden;
 }
+
 
 /* Убираем :before, чтобы не мешал блюру */
 .c1e9c47c23f12ca3-menu:before {
@@ -239,5 +241,53 @@ body {
 ._841c8f861f7b2704-replyLabel {
     color: var(--text-default);
 }
+
+/* Полностью прозрачная панель реакции с blur фона */
+._5126c0cd07f243a0-buttonsInner.f84418acfdbdfe54-popover.f7ecaca5c80dbf3a-wrapper,
+._5126c0cd07f243a0-buttonsInner.f84418acfdbdfe54-popover.f7ecaca5c80dbf3a-wrapper::before {
+    position: relative !important;
+    background-color: hsla(0, 0%, 100%, 0.065) !important; /* полупрозрачный белый для blur */
+    border-radius: 5px !important; /* аккуратные скругления */
+    box-shadow: 
+        0 0 0 1px hsla(0, 0%, 100%, 0.03), 
+        0 3px 12px hsla(0, 0%, 0%, 0.12) !important; /* мягкая тень */
+    backdrop-filter: blur(16px) brightness(1.1) saturate(1.07) !important; /* рабочий blur */
+    -webkit-backdrop-filter: blur(16px) brightness(1.1) saturate(1.07) !important;
+    overflow: hidden !important;
+    background-clip: padding-box !important; /* чтобы темы не перебивали */
+}
+
+/* Полупрозрачная панель чата с frosted glass эффектом */
+._5126c0cd07f243a0-channelTextArea._740174f3d6a2c8fe-channelTextArea,
+._5126c0cd07f243a0-channelTextArea._740174f3d6a2c8fe-channelTextArea ._740174f3d6a2c8fe-scrollableContainer {
+  position: relative !important;
+  background-color: hsla(0, 0%, 100%, 0.01) !important; /* прозрачный фон для blur */
+  border-radius: 5px !important; /* красивые скруглённые углы */
+  box-shadow: 
+    0 0 0 1px hsla(0, 0%, 100%, 0.03), 
+    0 3px 15px hsla(0, 0%, 0%, 0.12) !important; /* мягкая тень */
+  backdrop-filter: blur(0px) brightness(1.1) saturate(1.07) !important; /* рабочий blur */
+  -webkit-backdrop-filter: blur(16px) brightness(1.1) saturate(1.07) !important;
+  overflow: hidden;
+  background-clip: padding-box !important; /* чтобы темы не перебивали */
+}
+
+/* Белый текст и шрифт только в сообщениях чата */
+div[class*="messageContent"] {
+    font-family: 'Roboto', sans-serif !important; /* Твой шрифт */
+    color: #ffffff !important; /* Чисто белый цвет текста */
+}
+
+/* Белый цвет ссылок внутри сообщений */
+div[class*="messageContent"] a {
+    color: #ffffff !important;
+}
+
+/* Белый цвет эмодзи */
+div[class*="messageContent"] .emoji {
+    filter: brightness(1) !important; /* эмодзи не затемняются темой */
+}
+
+
 
 
