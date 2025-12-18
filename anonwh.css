@@ -15,8 +15,6 @@
   --background-image-size: cover; 
   --background-image-position: center; 
 
- 
-
   /* Popout & Modal variables */
   --pop out-modal-image: var(--background-image); 
   --popout-modal-blur: 5px; 
