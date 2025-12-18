@@ -58,6 +58,25 @@
     background: rgb(165,165,165) !important;
 }
 
+/* SVG-иконка внутри span */
+._908e20001ad67812-unreadPill svg path {
+    stroke: rgb(165,165,165) !important; /* белый контур */
+    fill: rgb(165,165,165) !important;   /* белая заливка */
+}
+
+/* Разделитель "новые сообщения" */
+#---new-messages-bar {
+    background: rgb(165,165,165) !important;
+    border-color: rgb(165,165,165) !important;
+}
+
+/* Весь span с текстом и SVG */
+._908e20001ad67812-unreadPill {
+    color: #ffffff !important;             /* белый текст */
+    background-color: rgb(165,165,165) !important; /* фон серый */
+}
+
+
 /* ========================================================================= */
 /* 4. Очистка body */
 /* ========================================================================= */
@@ -306,16 +325,4 @@ div[class*="messageContent"] .emoji {
     -webkit-backdrop-filter: blur(8px);
     border-radius: 14px;
 }
-
-/* Основной фон профиля — почти полностью прозрачный с сильным блюром и лёгкой подсветкой */
-._5be3ef42f92174b2-header,
-._5be3ef42f92174b2-body,
-._5be3ef42f92174b2-footer {
-    background: rgba(255, 255, 255, 0.02) !important;
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-    border-radius: 14px;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
-}
-
 
