@@ -233,50 +233,6 @@ body{
     box-shadow: inset 0 0 12px rgba(255,255,255,0.08);
 }
 
-/* =============================== */
-/* REMOVE ALL PROFILE PADDINGS */
-/* =============================== */
-
-/* Весь попап профиля */
-.root__24502,
-.fullSize_c0bea0,
-.c0bea05627c5dc35-inner,
-.inner_c0bea0,
-.outer_c0bea0,
-._5be3ef42f92174b2-header,
-._5be3ef42f92174b2-body,
-._5be3ef42f92174b2-footer {
-    padding: 0 !important;
-}
-
-/* Верхняя панель с кнопками */
-.da589062f0c96515-wrapper {
-    padding: 0 !important;
-}
-
-/* Контейнеры внутри body */
-._63ed30c16c7151f2-container,
-._530ce51b6bf15868-mutuals,
-.fccfdf3cfff21921-root {
-    padding: 0 !important;
-}
-
-/* Роли */
-.dfa8b6b94cddb191-role {
-    margin: 2px !important; /* оставляем минимальный margin, чтобы не слипалось */
-    padding: 0 !important;
-}
-
-/* Footer / поле ввода */
-.channelTextArea_f75fb0,
-.scrollableContainer__74017 {
-    padding: 0 !important;
-}
-
-/* Кнопки */
-.fb7f9476ada049c8-bannerButton {
-    padding: 0 !important;
-}
 
 
 /* Остальные блоки интерфейса (кнопки, чекбоксы, голосовые панели, прогресс-бары) остаются без изменений */
