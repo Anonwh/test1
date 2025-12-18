@@ -299,6 +299,13 @@ div[class*="messageContent"] .emoji {
     color: #bbbbbb !important; /* чуть темнее, чтобы выделялось */
 }
 
+/* Контейнер сообщения + blur */
+._4ad6936dd30096b3-messageContainer {
+    background-color: rgba(0, 0, 0, 0.18) !important; /* обязательно НЕ прозрачный */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 14px;
+}
 
 
 
